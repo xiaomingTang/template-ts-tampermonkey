@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "outDir": "./dist",
+    "noImplicitAny": true,
+    "module": "ESNext",
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "allowJs": true,
+    "downlevelIteration": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "target": "es5",
+    "strict": true,
+    "paths": {
+      "@Src/*": [ "src/*" ]
+    }
+  },
+  "include": [ "src/**/*" ],
+  "exclude": [
+    "node_modules/**/*",
+    "config/**/*",
+    "dist/**/*"
+  ]
+}
