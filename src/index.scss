@@ -1,0 +1,21 @@
+#__tampermonkey__app {
+  font-size: 13px;
+}
+
+.__old-style {
+  color: #7cabf7;
+}
+
+.f13 span.m {
+	padding: 4px 1em;
+	border-radius: 4px;
+	box-shadow: 4px 4px 6px gray;
+	color: white!important;
+  background-color: red!important;
+  cursor: pointer;
+  transition: box-shadow .5s;
+  &:hover {
+    text-decoration: none;
+    box-shadow: 2px 2px 4px gray;
+  }
+}
