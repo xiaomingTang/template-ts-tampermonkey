@@ -16,8 +16,10 @@ git clone git@github.com:xiaomingTang/template-ts-tampermonkey.git
 
 ### 项目特点
 - 由[template-ts-browser](https://github.com/xiaomingTang/template-ts-browser)模板生成
-- 自动添加油猴脚本描述(需配置**./config/Constants.js**中的*prefix*属性)
+- 自动添加油猴脚本描述(详见**config/Constants.js**)
 - 自动复制到剪贴板
 - [x] eslint
 - [x] typescript
+- [x] 油猴内置函数的类型支持(详见**config/Constants.js**)
+- [x] webpack externals 支持(详见**config/Constants.js**)
 - [ ] 要是有人用就上*react*+*antd*

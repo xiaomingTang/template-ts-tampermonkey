@@ -6,7 +6,13 @@ const autoprefixer = require("autoprefixer")
 const CopyPlugin = require("copy-first-asset-webpack-plugin").default
 
 const Paths = require("./Paths")
-const { isProduction, prefix, autoCopy } = require("./Constants")
+const {
+  isProduction,
+  prefix,
+  suffix,
+  autoCopy,
+  externals,
+} = require("./Constants")
 
 const cssLoader = [
   // isProduction ? MiniCssExtractPlugin.loader : 
@@ -48,12 +54,14 @@ module.exports = {
   entry: {
     index: path.resolve(Paths.Src, "index.ts"),
   },
+  externals: isProduction ? externals : {},
   output: {
     path: Paths.Dist,
     filename: "static/scripts/[name].js",
     chunkFilename: isProduction
       ? "static/scripts/chunk-[name].js"
-      : "static/scripts/chunk-[name].js"
+      : "static/scripts/chunk-[name].js",
+    libraryTarget: "umd",
   },
   resolve: {
     extensions: [".ts", ".js", ".json"],
@@ -147,13 +155,9 @@ module.exports = {
       title: "template-ts-tampermonkey",
     }),
     new webpack.WatchIgnorePlugin([/\.d\.ts$/]),
-    new webpack.LoaderOptionsPlugin({
-      options: {
-        libraryTarget: "umd",
-      }
-    }),
     isProduction ? new CopyPlugin({
       prefix,
+      suffix,
       copy: autoCopy,
     }) : null,
   ].filter(Boolean),
