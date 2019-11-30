@@ -65,6 +65,7 @@ module.exports = {
   entry: {
     index: path.resolve(Paths.Src, "index.ts"),
   },
+  // externals 应当在/config/Constants.js文件中声明, 不建议在此修改配置逻辑
   externals: isProduction ? externals : {},
   output: {
     path: Paths.Dist,
