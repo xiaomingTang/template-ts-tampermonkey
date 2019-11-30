@@ -3,6 +3,10 @@ const isProduction = process.env.NODE_ENV !== "development"
 const Constants = {
   isProduction,
   autoCopy: isProduction,
+  // 生产环境下, 由于代码被油猴在外面封装了一层, 所以不能sourceMap
+  // 而这儿的productionSourceMap仅仅是开启development模式, 让代码可读性稍微好一些
+  // 建议设为false
+  productionSourceMap: false,
   suffix: "\n",
   prefix: `
 // ==UserScript==

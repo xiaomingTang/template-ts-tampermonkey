@@ -8,6 +8,7 @@ const CopyPlugin = require("copy-first-asset-webpack-plugin").default
 const Paths = require("./Paths")
 const {
   isProduction,
+  productionSourceMap,
   prefix,
   suffix,
   autoCopy,
@@ -48,9 +49,19 @@ const cssModuleLoader = {
   }
 }
 
+const mode = (isProduction && !productionSourceMap)
+  ? "production"
+  : "development"
+
+const devtool = isProduction
+  ? false
+  : "inline-cheap-module-source-map"
+
+console.log("-----", mode, devtool)
+
 module.exports = {
-  mode: isProduction ? "production" : "development",
-  devtool: "inline-cheap-module-source-map",
+  mode,
+  devtool,
   entry: {
     index: path.resolve(Paths.Src, "index.ts"),
   },
