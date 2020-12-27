@@ -1,4 +1,6 @@
-# template-ts-tampermonkey
+# 本项目已迁移至[template-react-tampermonkey](https://github.com/xiaomingTang/template-react-tampermonkey)
+> [template-react-tampermonkey](https://github.com/xiaomingTang/template-react-tampermonkey)支持**typescript + babel + react + material-ui**, 比 antd 好, 在不会污染全局样式; 且使用了 babel + corejs, 打包体积更小; 将 sass 改成了 less, 再不用忍受 node-gyp 恶心人了。
+## template-ts-tampermonkey
 
 ### description
 让油猴也能用上**typescript**
